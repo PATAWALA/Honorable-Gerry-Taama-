@@ -27,7 +27,7 @@ const books = [
 
 export default function Library() {
   return (
-    <section className="bg-neutral-950 px-4 py-24">
+    <section id='library' className="bg-neutral-950 px-4 py-24">
       <div className="mx-auto max-w-7xl">
         <div className="mb-16 text-center">
           <h2 className="font-serif text-4xl font-bold text-stone-100 sm:text-5xl">

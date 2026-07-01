@@ -1,43 +1,76 @@
-import React from 'react';
-import { Hammer, ChevronRight } from 'lucide-react';
+const pieces = [
+  {
+    id: 1,
+    name: 'Table Mère GETAK',
+    description:
+      'Acajou massif centenaire, patine naturelle et finition satinée. Une pièce qui traverse les générations.',
+    price: '4 200 000 FCFA',
+    image:
+      'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+  },
+  {
+    id: 2,
+    name: 'Bureau Directoire en Noyer Noir',
+    description:
+      'Lignes sobres et prestance absolue. Conçu pour les décideurs qui impriment leur marque.',
+    price: '3 800 000 FCFA',
+    image:
+      'https://images.unsplash.com/photo-1581428982868-e410dd047a90?auto=format&fit=crop&q=80&w=500',
+  },
+  {
+    id: 3,
+    name: 'Console d’Exception en Teck',
+    description:
+      'Sculpture artisanale, alliance du bois brut et de la précision des ateliers GETAK.',
+    price: '2 950 000 FCFA',
+    image:
+      'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+  },
+];
 
 export default function CraftShop() {
-  const products = [
-    { title: "Table Monolithe Impériale", desc: "Bois massif d'iroko sélectionné, piétement architectural en acier brossé.", price: "1 200 000 FCFA", img: "https://images.unsplash.com/photo-1544457038-1006dbde948f?auto=format&fit=crop&q=80&w=500" },
-    { title: "Bureau de Direction GETAK", desc: "Teck ancien sculpté à la main, lignes contemporaines et structures invisibles.", price: "1 850 000 FCFA", img: "https://images.unsplash.com/photo-1530018607912-eff2df11a7be?auto=format&fit=crop&q=80&w=500" },
-    { title: "Console d'Apparat Ébène", desc: "Finition miroir cirée à l'ancienne, une pièce maîtresse pour espaces d'exception.", price: "850 000 FCFA", img: "https://images.unsplash.com/photo-1581428982868-e410dd047a90?auto=format&fit=crop&q=80&w=500" }
-  ];
-
   return (
-    <section id="menuiserie" className="py-20 px-4 max-w-6xl mx-auto">
-      <div className="text-center space-y-4 mb-16">
-        <div className="inline-flex items-center gap-2 text-xs text-[#D4AF37] font-semibold tracking-widest uppercase">
-          <Hammer className="w-4 h-4" /> Noblesse du Bois Brut
+    <section id="menuiserie" className="bg-neutral-950 px-4 py-24">
+      <div className="mx-auto max-w-7xl">
+        <div className="mb-16 text-center">
+          <h2 className="font-serif text-4xl font-bold text-stone-100 sm:text-5xl">
+            Atelier GETAK – Menuiserie d’Art
+          </h2>
+          <p className="mt-4 text-stone-400">
+            Luxe brut, bois nobles, héritage artisanal
+          </p>
         </div>
-        <h2 className="text-3xl md:text-5xl font-bold text-white">Menuiserie d'Art GETAK</h2>
-        <p className="text-[#A1A1AA] max-w-xl mx-auto">Créations uniques en essences nobles de l'Afrique de l'Ouest. Le luxe et le mobilier d'art à l'état brut.</p>
-      </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {products.map((item, idx) => (
-          <div key={idx} className="bg-[#161618] border border-[#27272A] rounded-xl overflow-hidden hover:border-[#D4AF37]/40 transition-all duration-300 flex flex-col group">
-            <div className="overflow-hidden relative h-64">
-              <img src={item.img} alt={item.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-            </div>
-            <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
-              <div>
-                <h3 className="text-xl font-bold text-white group-hover:text-[#D4AF37] transition-colors">{item.title}</h3>
-                <p className="text-sm text-[#A1A1AA] mt-2 leading-relaxed">{item.desc}</p>
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {pieces.map((piece) => (
+            <article
+              key={piece.id}
+              className="group flex flex-col overflow-hidden rounded-2xl border border-amber-500/10 bg-neutral-900 transition-shadow hover:shadow-2xl hover:shadow-amber-500/5"
+            >
+              <div className="h-64 overflow-hidden">
+                <img
+                  src={piece.image}
+                  alt={piece.name}
+                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
               </div>
-              <div className="pt-4 border-t border-[#27272A] flex items-center justify-between">
-                <span className="text-lg font-bold text-white">{item.price}</span>
-                <button className="text-xs font-bold text-[#D4AF37] flex items-center gap-1 group-hover:underline">
-                  Réserver la pièce <ChevronRight className="w-3 h-3" />
+              <div className="flex flex-1 flex-col p-6">
+                <h3 className="font-serif text-xl font-semibold text-stone-200">
+                  {piece.name}
+                </h3>
+                <p className="mt-2 flex-1 text-sm leading-relaxed text-stone-400">
+                  {piece.description}
+                </p>
+                <p className="mt-4 text-lg font-bold text-amber-400">
+                  {piece.price}
+                </p>
+                <button className="mt-6 w-full rounded-lg border border-amber-500 bg-amber-500/10 px-4 py-3 text-sm font-medium text-amber-400 transition hover:bg-amber-500 hover:text-black">
+                  Réserver cette pièce unique
                 </button>
               </div>
-            </div>
-          </div>
-        ))}
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   );

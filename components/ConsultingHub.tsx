@@ -1,91 +1,93 @@
-'use client';
+"use client"
+import React from 'react';
+import { Landmark, CheckCircle, Globe } from 'lucide-react';
+
 export default function ConsultingHub() {
   return (
-    <section className="bg-neutral-900 px-4 py-24">
-      <div className="mx-auto max-w-3xl">
-        <div className="mb-12 text-center">
-          <h2 className="font-serif text-4xl font-bold text-stone-100 sm:text-5xl">
-            Conseil & Partenariats Public-Privé
-          </h2>
-          <p className="mt-4 text-stone-400">
-            Téléchargez notre note stratégique réservée aux dirigeants et directeurs canadiens
-          </p>
+    <section id="montreal" className="py-24 bg-gradient-to-t from-[#161618] to-[#0F0F10] px-4">
+      <div className="max-w-5xl mx-auto bg-[#161618] border border-[#D4AF37]/20 rounded-3xl p-8 md:p-14 shadow-2xl shadow-[#D4AF37]/5">
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          
+          {/* Texte explicatif - Mandat Canada */}
+          <div className="space-y-6">
+            <div className="inline-flex items-center gap-2 bg-[#0F0F10] border border-[#D4AF37]/30 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider text-[#D4AF37]">
+              <Globe className="w-3 h-3" /> Axe Lomé — Montréal
+            </div>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-white tracking-tight leading-tight">
+              Partenariats Public-Privé & Conseils Stratégiques
+            </h2>
+            <p className="text-[#A1A1AA] text-sm leading-relaxed">
+              Pour les fonds d’investissement, cabinets d'ingénierie et entreprises canadiennes : sécurisez votre entrée et le déploiement de vos capitaux en Afrique de l'Ouest.
+            </p>
+            
+            <ul className="space-y-3 text-sm text-[#E4E4E7]">
+              <li className="flex items-center gap-3">
+                <CheckCircle className="w-4 h-4 text-[#D4AF37] shrink-0" /> Évaluation et atténuation des risques souverains
+              </li>
+              <li className="flex items-center gap-3">
+                <CheckCircle className="w-4 h-4 text-[#D4AF37] shrink-0" /> Relations institutionnelles & ingénierie de PPP
+              </li>
+              <li className="flex items-center gap-3">
+                <CheckCircle className="w-4 h-4 text-[#D4AF37] shrink-0" /> Réseau d'affaires Afrique de l'Ouest de premier plan
+              </li>
+            </ul>
+          </div>
+
+          {/* Formulaire de filtrage Haut de Gamme */}
+          <div className="bg-[#0F0F10] p-6 md:p-8 rounded-2xl border border-[#27272A] space-y-4">
+            <div className="text-center space-y-1 mb-4">
+              <h3 className="text-lg font-bold text-white flex items-center justify-center gap-2">
+                <Landmark className="w-4 h-4 text-[#D4AF37]" /> Note d'Orientation 2026
+              </h3>
+              <p className="text-xs text-[#71717A]">Demande d'accès privé réservée aux professionnels</p>
+            </div>
+            
+            <form className="space-y-3" onSubmit={(e) => e.preventDefault()}>
+              <div>
+                <input 
+                  type="text" 
+                  placeholder="Nom complet" 
+                  className="w-full p-3.5 bg-[#161618] border border-[#27272A] rounded-xl text-sm text-white placeholder-[#52525B] focus:outline-none focus:border-[#D4AF37] transition-all"
+                  required 
+                />
+              </div>
+              <div>
+                <input 
+                  type="text" 
+                  placeholder="Poste occupé & Entreprise / Fonds" 
+                  className="w-full p-3.5 bg-[#161618] border border-[#27272A] rounded-xl text-sm text-white placeholder-[#52525B] focus:outline-none focus:border-[#D4AF37] transition-all"
+                  required 
+                />
+              </div>
+              <div>
+                <input 
+                  type="email" 
+                  placeholder="Adresse e-mail professionnelle" 
+                  className="w-full p-3.5 bg-[#161618] border border-[#27272A] rounded-xl text-sm text-white placeholder-[#52525B] focus:outline-none focus:border-[#D4AF37] transition-all"
+                  required 
+                />
+              </div>
+              <div>
+                <input 
+                  type="tel" 
+                  placeholder="Téléphone (WhatsApp pro)" 
+                  className="w-full p-3.5 bg-[#161618] border border-[#27272A] rounded-xl text-sm text-white placeholder-[#52525B] focus:outline-none focus:border-[#D4AF37] transition-all"
+                  required 
+                />
+              </div>
+              
+              <button 
+                type="submit" 
+                className="w-full py-4 mt-2 bg-[#D4AF37] hover:bg-[#C5A028] text-[#0F0F10] font-bold rounded-xl text-xs uppercase tracking-widest transition-all duration-300 shadow-lg shadow-[#D4AF37]/5"
+              >
+                Solliciter un accès & note
+              </button>
+            </form>
+          </div>
+
         </div>
 
-        <form
-          onSubmit={(e) => e.preventDefault()}
-          className="space-y-6 rounded-2xl border border-amber-500/20 bg-neutral-800/90 p-8 backdrop-blur sm:p-12"
-        >
-          <div>
-            <label
-              htmlFor="name"
-              className="mb-2 block text-sm font-medium text-stone-300"
-            >
-              Nom complet
-            </label>
-            <input
-              type="text"
-              id="name"
-              required
-              className="w-full rounded-lg border border-stone-700 bg-stone-900 px-4 py-3 text-stone-200 placeholder-stone-500 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500"
-              placeholder="Votre nom complet"
-            />
-          </div>
-          <div>
-            <label
-              htmlFor="position"
-              className="mb-2 block text-sm font-medium text-stone-300"
-            >
-              Poste occupé
-            </label>
-            <input
-              type="text"
-              id="position"
-              required
-              className="w-full rounded-lg border border-stone-700 bg-stone-900 px-4 py-3 text-stone-200 placeholder-stone-500 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500"
-              placeholder="Directeur général, VP Partenariats..."
-            />
-          </div>
-          <div>
-            <label
-              htmlFor="company"
-              className="mb-2 block text-sm font-medium text-stone-300"
-            >
-              Entreprise
-            </label>
-            <input
-              type="text"
-              id="company"
-              required
-              className="w-full rounded-lg border border-stone-700 bg-stone-900 px-4 py-3 text-stone-200 placeholder-stone-500 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500"
-              placeholder="Nom de votre organisation"
-            />
-          </div>
-          <div>
-            <label
-              htmlFor="phone"
-              className="mb-2 block text-sm font-medium text-stone-300"
-            >
-              Téléphone professionnel
-            </label>
-            <input
-              type="tel"
-              id="phone"
-              required
-              className="w-full rounded-lg border border-stone-700 bg-stone-900 px-4 py-3 text-stone-200 placeholder-stone-500 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500"
-              placeholder="+1 (514) xxx-xxxx"
-            />
-          </div>
-          <button
-            type="submit"
-            className="w-full rounded-lg bg-amber-500 px-6 py-4 text-base font-semibold text-black transition hover:bg-amber-400 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:ring-offset-2 focus:ring-offset-neutral-800"
-          >
-            Télécharger la Note Stratégique
-          </button>
-          <p className="text-center text-xs text-stone-500">
-            Confidentiel • Aucune information ne sera partagée
-          </p>
-        </form>
       </div>
     </section>
   );
